@@ -1,0 +1,85 @@
+<div class="container-fluid">
+  <div class="row">
+    <main role="main" class="col-8">
+      <section class="row text-center placeholders"></section>
+
+      <h2>Pregunta 1</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Number</th>
+              <th scope="col">Ocurrency</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let number of numberFilter; index as i">
+              <th>{{ i + 1 }}</th>
+              <td
+                [ngStyle]="{
+                  'background-color':
+                    number.ocurrency >= 2
+                      ? 'green'
+                      : number.ocurrency === 1
+                      ? 'yellow'
+                      : number.ocurrency < 1
+                      ? 'gray'
+                      : ''
+                }"
+              >
+                {{ number["number"] }}
+              </td>
+              <td
+                [ngStyle]="{
+                  'background-color':
+                    number.ocurrency >= 2
+                      ? 'green'
+                      : number.ocurrency === 1
+                      ? 'yellow'
+                      : number.ocurrency < 1
+                      ? 'gray'
+                      : ''
+                }"
+              >
+                {{ number["ocurrency"] }}
+              </td>
+            </tr>
+          </tbody>
+
+          <tbody>
+            <tr></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <p>
+          Primera posición :{{ firstPosition }} ultima posición :{{
+            lastPosition
+          }}
+        </p>
+        <p class="lead">
+          {{ bubbleSort() }}
+        </p>
+        <button
+          type="button"
+          *ngIf="!loading"
+          class="btn btn-info btn-lg btn-block lead"
+          (click)="restart()"
+        >
+          Resetear
+        </button>
+      </div>
+    </main>
+  </div>
+</div>
+
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.5)"
+  size="medium"
+  color="#fff"
+  type="ball-atom"
+  fullScreen="true"
+  class="myspinner"
+>
+</ngx-spinner>

@@ -1,0 +1,100 @@
+<div class="container-fluid">
+
+    <main role="main" class="col-8 centerF ">
+      <section class="row text-center placeholders"></section>
+
+      <h2>Pregunta 2</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>N*</th>
+              <th>a</th>
+              <th>b</th>
+              <th>c</th>
+              <th>d</th>
+              <th>e</th>
+              <th>f</th>
+              <th>g</th>
+              <th>h</th>
+              <th>i</th>
+              <th>j</th>
+              <th>k</th>
+              <th>l</th>
+              <th>m</th>
+              <th>n</th>
+              <th>o</th>
+              <th>p</th>
+              <th>q</th>
+              <th>r</th>
+              <th>s</th>
+              <th>t</th>
+              <th>u</th>
+              <th>v</th>
+              <th>w</th>
+              <th>x</th>
+              <th>y</th>
+              <th>z</th>
+              <th>Suma numeros contenidos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let vari of final; index as i">
+              <th>{{ i + 1 }}</th>
+              <th>{{ vari.a }}</th>
+              <th>{{ vari.b }}</th>
+              <th>{{ vari.c }}</th>
+              <th>{{ vari.d }}</th>
+              <th>{{ vari.e }}</th>
+              <th>{{ vari.f }}</th>
+              <th>{{ vari.g }}</th>
+              <th>{{ vari.h }}</th>
+              <th>{{ vari.i }}</th>
+              <th>{{ vari.j }}</th>
+              <th>{{ vari.k }}</th>
+              <th>{{ vari.l }}</th>
+              <th>{{ vari.m }}</th>
+              <th>{{ vari.n }}</th>
+              <th>{{ vari.o }}</th>
+              <th>{{ vari.p }}</th>
+              <th>{{ vari.q }}</th>
+              <th>{{ vari.r }}</th>
+              <th>{{ vari.s }}</th>
+              <th>{{ vari.t }}</th>
+              <th>{{ vari.u }}</th>
+              <th>{{ vari.v }}</th>
+              <th>{{ vari.w }}</th>
+              <th>{{ vari.x }}</th>
+              <th>{{ vari.y }}</th>
+              <th>{{ vari.z }}</th>
+              <th>{{ vari.number }}</th>
+            </tr>
+          </tbody>
+
+          <tbody>
+            <tr></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <button
+          type="button"
+          *ngIf="!loading"
+          class="btn btn-info btn-lg btn-block lead"
+          (click)="restart()"
+        >
+          Resetear
+        </button>
+      </div>
+    </main>
+
+</div>
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.5)"
+  size="medium"
+  color="#fff"
+  type="ball-atom"
+  fullScreen="true"
+  class="myspinner"
+>
+</ngx-spinner>
